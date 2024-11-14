@@ -1,0 +1,41 @@
+version: '3'
+services:
+  # Servicio de base de datos PostgreSQL
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: cristian       # Usuario de PostgreSQL
+      POSTGRES_PASSWORD: cristian   # Contraseña de PostgreSQL
+      POSTGRES_DB: compufiis_development # Nombre de la base de datos
+    ports:
+      - "5433:5432"                 # Puerto expuesto para acceder a PostgreSQL (5433) desde el host
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Volumen para persistencia de datos
+    networks:
+      - app-network                 # Red compartida con el servicio de Rails
+
+  # Servicio de aplicación web Rails
+  web:
+    build: .                        # Construye la imagen usando el Dockerfile en la raíz del proyecto
+    command: bash -c "rm -f tmp/pids/server.pid && rails server -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app              # Monta el código fuente en el contenedor
+    ports:
+      - "3001:3000"                 # Puerto expuesto para acceder a la aplicación Rails desde el host
+    depends_on:
+      - db                          # Asegura que PostgreSQL esté listo antes de iniciar Rails
+    environment:
+      DATABASE_HOST: db             # Nombre del servicio de PostgreSQL en la red de Docker
+      DATABASE_USERNAME: cristian    # Usuario de PostgreSQL
+      DATABASE_PASSWORD: cristian    # Contraseña de PostgreSQL
+      DATABASE_NAME: compufiis_development # Nombre de la base de datos
+    networks:
+      - app-network                 # Red compartida con el servicio de PostgreSQL
+
+# Volúmenes para almacenamiento de datos persistentes
+volumes:
+  pgdata:
+
+# Red compartida entre servicios para que se puedan comunicar entre sí
+networks:
+  app-network:

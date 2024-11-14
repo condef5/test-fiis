@@ -1,0 +1,396 @@
+/* Barra de bienvenida */
+.welcome-bar {
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(90deg, #85C1E9, #5DADE2); /* Degradado azul claro */
+    font-size: 0.9em; /* Tamaño reducido */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Tipo de letra estético */
+    color: #383535; /* Texto en blanco para contraste */
+}
+
+/* Barra de navegación principal */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: linear-gradient(90deg, #2874A6, #1c547a); /* Degradado azul oscuro */
+    font-family: 'Poppins', sans-serif; /* Tipo de letra uniforme */
+}
+
+/* Logo en forma circular */
+.logo-circle {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 70px; /* Tamaño aumentado */
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-circle span {
+    font-weight: bold;
+    font-size: 1.4em; /* Tamaño aumentado */
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff; /* Blanco para resaltar sobre el fondo degradado */
+}
+
+/* Navegación principal */
+.navbar nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #ffffff; /* Blanco para resaltar en el fondo azul oscuro */
+    font-weight: bold;
+    font-size: 1.4em; /* Tamaño ajustado */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Iconos de carrito y login */
+.icons {
+    display: flex;
+    gap: 1em;
+}
+
+.cart-icon, .login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC300; /* Amarillo oscuro para resaltar */
+    border-radius: 50%;
+    width: 50px; /* Tamaño aumentado */
+    height: 50px;
+    color: #333; /* Color oscuro para el símbolo en contraste con el fondo amarillo */
+    font-size: 1.4em; /* Tamaño de icono */
+    border: 2px solid #ffffff; /* Borde blanco para armonizar con el fondo */
+}
+
+.cart-icon:hover, .login-icon:hover {
+    background-color: #c6a24f; /* Un tono más oscuro de amarillo en hover */
+}
+
+/* Contenedor Principal */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Contenedor de Imagen */
+.image-container {
+    width: 90%;
+    height: 400px; /* Ajusta la altura */
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.4) inset;
+    border-radius: 10px; /* Opcional para bordes redondeados */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px; /* Mantiene el borde redondeado de la imagen */
+}
+
+.image-container h2 {
+    color: #ff007f;
+    font-size: 2em;
+    margin-top: -20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor de Productos */
+.products-container {
+    width: 90%;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    border: 2px solid #b3e5fc; /* Borde celeste */
+    text-align: center;
+    margin-bottom: 20px; /* Añadido para reducir el espacio entre productos y el contenedor de imagen */
+}
+
+/* Ajuste del mensaje adicional para acercarlo a las tarjetas */
+.products-message {
+    margin-top: 10px; /* Reducido para acercarlo más a las casillas */
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 2em 0;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    border: none;
+    padding: 1em;
+    padding-top: 0.5em;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación suave */
+    border-top: 4px solid #007bff; /* Borde de color azul en la parte superior */
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px; /* Ajusta la altura deseada */
+    object-fit: cover; /* Asegura que la imagen se recorte para llenar el espacio sin distorsionarse */
+    border-radius: 6px; /* Opcional: redondea las esquinas */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra en la imagen */
+    margin-bottom: 8px;
+}
+
+
+.product-card .view-details {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.product-card .view-details:hover {
+    background-color: #0056b3;
+}
+
+.product-card h3 {
+    font-size: 1.3em;
+    color: #0056b3;
+    margin-bottom: 8px;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #e1f5fe;
+    border: 1px dashed #0288d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0288d1;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+
+/* Contenedor de la segunda imagen */
+.secondary-image-container {
+    width: 90%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px; /* Espacio entre contenedor de productos y el contenedor de imagen 2 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.4) inset;
+    border-radius: 10px;
+  }
+  
+  .secondary-image-container img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+
+
+  /* Contenedor de Información Adicional */
+.about-compufiis-container {
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-compufiis-container h2 {
+    color: #2e7d32;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-compufiis-container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.info-sections {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.info-box {
+    background-color: #bbdefb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación suave */
+}
+
+.info-box:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+}
+
+.info-box h3 {
+    font-size: 1.6em;
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Footer */
+footer .company-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer .company-info p {
+    margin: 0.5em 0;
+}
+
+footer .company-info a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 5px;
+}
+
+footer .company-info a:hover {
+    text-decoration: underline;
+}
+
+/* Efecto de cambio de color y aumento de tamaño al pasar el cursor sobre las categorías */
+.navbar nav a:hover {
+    color: #007bff; /* Cambia este color al que prefieras */
+    transform: scale(1.1); /* Aumenta un 10% el tamaño */
+    transition: all 0.3s ease; /* Suaviza la transición */
+}
+
+/* Estilo para el enlace de "Ver detalles" */
+.details-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-link:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 8px rgba(0, 91, 187, 0.3); /* Sombra al pasar el mouse */
+}
+
+
+
+/* Estilos para el carrito deslizante */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: width 0.4s ease;
+    z-index: 1000;
+  }
+  
+  .cart-container {
+    background-color: #f5f5f5;
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .cart-footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+  #continue-shopping, #checkout {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #checkout {
+    background-color: #007bff;
+    display: block;
+  }
+  
+  .cart-footer button:hover {
+    opacity: 0.9;
+  }
