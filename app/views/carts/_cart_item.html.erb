@@ -1,0 +1,24 @@
+<div id="cart-item-<%= cart_item.id %>" class="cart-item">
+  <div class="cart-item-header">
+    <% if cart_item.product.image.attached? %>
+      <%= image_tag cart_item.product.image, class: "product-image-container" %>
+    <% end %>
+
+    <div>
+      <h3 class="font-medium"><%= cart_item.product.name %></h3>
+      <p class="text-sm text-gray-600">
+        Precio: <%= number_to_currency(cart_item.product.price, unit: 'S/', separator: '.', delimiter: ',') %>
+      </p>
+    </div>
+  </div>
+
+  <div class="product-footer">
+    <p class="product-quantity">Cantidad: <%= cart_item.quantity %></p>
+    <div class="delete-button-container">
+      <%= button_to "Eliminar",
+                  carts_path(cart_item_id: cart_item.id),
+                  method: :delete,
+                  class: "delete-button" %>
+    </div>
+  </div>
+</div>
