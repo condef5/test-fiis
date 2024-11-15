@@ -17,28 +17,13 @@
   <body>
     <!-- Mostrar mensajes flash -->
     <% if flash[:notice] %>
-  <div class="alert alert-success"><%= flash[:notice] %></div>
-<% elsif flash[:alert] %>
-  <div class="alert alert-danger"><%= flash[:alert] %></div>
-<% end %>
-
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
 
     <%= yield %>
 
-    <!-- Carrito desplegable -->
-    <div id="cart-overlay" class="cart-overlay">
-      <div class="cart-container">
-        <button class="close-cart">✕</button>
-        <h2>Carrito de compra</h2>
-        <div id="cart-items">
-          <p id="empty-cart-message">No hay productos en el carrito.</p>
-        </div>
-        <div class="cart-footer">
-          <p id="cart-total">Total: S/0.00</p>
-          <button id="continue-shopping">Seguir comprando</button>
-          <button id="checkout" style="display: none;">Finalizar compra</button>
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'carts/cart' %>
   </body>
 </html>

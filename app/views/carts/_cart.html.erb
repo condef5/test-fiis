@@ -1,0 +1,31 @@
+<!-- Carrito desplegable -->
+<div id="cart-overlay" class="cart-overlay">
+  <div class="cart-container">
+    <div class="flex mb-4">
+      <h2 class="text-lg">Carrito de compra</h2>
+      <button class="close-cart">✕</button>
+    </div>
+
+    <div id="cart-items">
+      <% if @cart.cart_items.any? %>
+        <%= render partial: 'carts/cart_item', collection: @cart.cart_items %>
+      <% else %>
+        <p id="empty-cart-message">Tu carrito está vacío.</p>
+      <% end %>
+    </div>
+
+    <div class="cart-footer">
+      <p id="cart-total">
+        Total: <%= number_to_currency(@cart.total, unit: 'S/', separator: '.', delimiter: ',') %>
+      </p>
+
+      <button id="continue-shopping" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+        Seguir comprando
+      </button>
+
+      <% if @cart.cart_items.any? %>
+        <%= link_to "Finalizar compra", carts_path, id: "checkout" %>
+      <% end %>
+    </div>
+  </div>
+</div>
